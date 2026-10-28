@@ -993,6 +993,104 @@ function App() {
 
             </article>
 
+
+            {/* Endpoint Reconciliation Platform */}
+            <article className="project-card">
+
+              <div className="project-header">
+
+                <div>
+                  <p className="project-label">
+                    IT OPERATIONS & ENDPOINT SECURITY
+                  </p>
+
+                  <h3>
+                    Endpoint Reconciliation Platform
+                  </h3>
+                </div>
+
+              </div>
+
+              <div className="project-main">
+
+                <div className="project-description">
+
+                  <h4>
+                    A web-based platform designed to compare IT asset
+                    inventory with endpoint security records.
+                  </h4>
+
+                  <p>
+                    The platform brings together asset inventory and
+                    endpoint security information to help identify
+                    missing records, hostname mismatches, and endpoint
+                    coverage gaps.
+                  </p>
+
+                  <p>
+                    It uses a React frontend, Python FastAPI backend,
+                    and PostgreSQL database. Integrations include
+                    Snipe-IT, Wazuh, and Trend Micro Vision One.
+                  </p>
+
+                  <div className="project-features">
+
+                    <div>
+                      <strong>Asset Reconciliation</strong>
+                      <span>
+                        Compare inventory records with endpoint data
+                      </span>
+                    </div>
+
+                    <div>
+                      <strong>Endpoint Coverage</strong>
+                      <span>
+                        Identify potentially missing security records
+                      </span>
+                    </div>
+
+                    <div>
+                      <strong>Mismatch Detection</strong>
+                      <span>
+                        Highlight hostname differences and discrepancies
+                      </span>
+                    </div>
+
+                    <div>
+                      <strong>Centralized Dashboard</strong>
+                      <span>
+                        Review consolidated reconciliation results
+                      </span>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <aside className="project-stack">
+
+                  <p>
+                    TECHNOLOGY STACK
+                  </p>
+
+                  <div className="project-tags">
+                    <span>React</span>
+                    <span>JavaScript</span>
+                    <span>Python</span>
+                    <span>FastAPI</span>
+                    <span>PostgreSQL</span>
+                    <span>REST APIs</span>
+                    <span>Snipe-IT</span>
+                    <span>Wazuh</span>
+                    <span>Trend Micro Vision One</span>
+                  </div>
+
+                </aside>
+
+              </div>
+
+            </article>
+
           </div>
 
         </section>
