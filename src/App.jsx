@@ -994,6 +994,129 @@ function App() {
             </article>
 
 
+            {/* AegisSec — Enterprise ASPM Platform */}
+            <article className="project-card">
+
+              <div className="project-header">
+
+                <div>
+                  <p className="project-label">
+                    CYBERSECURITY · DEVSECOPS · ASPM
+                  </p>
+
+                  <h3>
+                    AegisSec — Enterprise Security Platform
+                  </h3>
+
+                </div>
+
+                <div className="project-links">
+
+                  <a
+                    href="https://github.com/shinevthomas/aegis-sec"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub ↗
+                  </a>
+
+                </div>
+
+              </div>
+
+
+              <div className="project-main">
+
+                <div className="project-description">
+
+                  <h4>
+                    An enterprise-grade Application Security Posture Management (ASPM)
+                    platform that automates multi-vector vulnerability scanning, enforces
+                    CI/CD quality gates, and exports industry-standard OASIS SARIF 2.1.0 reports.
+                  </h4>
+
+                  <p>
+                    AegisSec orchestrates three security engines: a Gitleaks-style secret scanner
+                    detecting exposed API keys and credentials, a Semgrep-style SAST engine
+                    flagging SQL Injection (CWE-89) with inline parameterized query diffs,
+                    and a Trivy-style SCA engine cross-referencing CVE advisories against
+                    third-party dependencies.
+                  </p>
+
+                  <p>
+                    The platform enforces automated GitHub Actions CI/CD quality gates,
+                    exports OASIS SARIF 2.1.0 reports natively ingested by GitHub Advanced
+                    Security, and deploys as a containerized Docker service with a dark-mode
+                    web control room providing real-time posture scoring (0–100).
+                  </p>
+
+
+                  <div className="project-features">
+
+                    <div>
+                      <strong>Secret Detection</strong>
+                      <span>AWS IAM keys, Stripe tokens, private keys — masked in logs</span>
+                    </div>
+
+                    <div>
+                      <strong>SAST Code Analysis</strong>
+                      <span>SQL Injection (CWE-89) detection with remediation diffs</span>
+                    </div>
+
+                    <div>
+                      <strong>SCA Dependency Audit</strong>
+                      <span>CVE advisory matching for outdated third-party packages</span>
+                    </div>
+
+                    <div>
+                      <strong>CI/CD Quality Gate</strong>
+                      <span>GitHub Actions workflow blocking high-risk pull requests</span>
+                    </div>
+
+                    <div>
+                      <strong>OASIS SARIF 2.1.0</strong>
+                      <span>Industry-standard output for GitHub Code Scanning & Azure DevOps</span>
+                    </div>
+
+                    <div>
+                      <strong>Posture Score (0–100)</strong>
+                      <span>Real-time A–F security grading with Docker web dashboard</span>
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <aside className="project-stack">
+
+                  <p>
+                    TECHNOLOGY STACK
+                  </p>
+
+                  <div className="project-tags">
+
+                    <span>Python</span>
+                    <span>OASIS SARIF 2.1.0</span>
+                    <span>Docker</span>
+                    <span>GitHub Actions</span>
+                    <span>REST API</span>
+                    <span>HTML5 / CSS3</span>
+                    <span>OWASP Top 10</span>
+                    <span>CWE-89</span>
+                    <span>CVE / SCA</span>
+                    <span>DevSecOps</span>
+                    <span>Git</span>
+
+                  </div>
+
+                </aside>
+
+              </div>
+
+            </article>
+
+
             {/* Endpoint Reconciliation Platform */}
             <article className="project-card">
 
