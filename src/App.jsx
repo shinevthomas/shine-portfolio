@@ -1117,6 +1117,150 @@ function App() {
             </article>
 
 
+            {/* HRAstra — Enterprise Cloud HRMS & Payroll */}
+            <article className="project-card">
+
+              <div className="project-header">
+
+                <div>
+                  <p className="project-label">
+                    ENTERPRISE SAAS · FULL-STACK · HRMS & PAYROLL
+                  </p>
+
+                  <h3>
+                    HRAstra — Enterprise Cloud HRMS & Payroll
+                  </h3>
+                </div>
+
+                <div className="project-links">
+
+                  <a
+                    href="https://github.com/shinevthomas/hrastra"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub ↗
+                  </a>
+
+                </div>
+
+              </div>
+
+
+              <div className="project-main">
+
+                <div className="project-description">
+
+                  <h4>
+                    A production-grade, multi-tenant Human Capital Management (HCM) & Statutory
+                    Payroll platform engineered for Indian enterprises with automated compliance
+                    (EPF/ESIC/PT/TDS), shift rosters, Form 12BB tax regime comparator, SOC2 audit trail,
+                    and offboarding FnF clearances.
+                  </h4>
+
+                  <p>
+                    HRAstra provides strict enterprise multi-tenant data isolation using PostgreSQL UUID
+                    scoping across 18 relational models. The platform features an automated Indian statutory
+                    payroll engine computing Employees' Provident Fund (12% EPF employee + employer), ESIC,
+                    State Professional Tax (₹200), and TDS withholding, alongside official printable
+                    payslip vouchers with Indian numbering and numbers-to-words currency conversion.
+                  </p>
+
+                  <p>
+                    Includes an interactive Form 12BB Income Tax regime comparator (Old vs New Regime under Budget 2024),
+                    multi-shift roster scheduling, biometric IoT webhook simulation, atomic leave deductions
+                    with FOR UPDATE ACID row-locks, 4-way separation clearances (IT, Finance, HR, Admin),
+                    SOC2/ISO 27001 audit logging, and full Employee 360° profile inspection.
+                  </p>
+
+
+                  <div className="project-features">
+
+                    <div>
+                      <strong>Multi-Tenant Architecture</strong>
+                      <span>Strict UUID tenant scoping across all 18 PostgreSQL relational tables</span>
+                    </div>
+
+                    <div>
+                      <strong>Form 12BB Tax Comparator</strong>
+                      <span>Interactive Old vs New Regime simulation (Budget 2024 ₹75k std deduction & slabs)</span>
+                    </div>
+
+                    <div>
+                      <strong>Shift & Roster Management</strong>
+                      <span>Multi-shift rotation (Morning, General, US Night), grace tracking & weekly matrix</span>
+                    </div>
+
+                    <div>
+                      <strong>Separation & FnF Clearance</strong>
+                      <span>Notice period countdown, 4-way clearance (IT/Finance/HR/Admin) & FnF settlement</span>
+                    </div>
+
+                    <div>
+                      <strong>SOC2 & ISO 27001 Audit Trail</strong>
+                      <span>Immutable chronological compliance event log with client IP and category tagging</span>
+                    </div>
+
+                    <div>
+                      <strong>Indian Statutory Payroll</strong>
+                      <span>EPF (12%), ESIC (0.75%), State PT (₹200), TDS & auto payslip voucher generation</span>
+                    </div>
+
+                    <div>
+                      <strong>Web & Biometric Punch</strong>
+                      <span>Browser punch clock + IoT hardware webhook for physical attendance terminals</span>
+                    </div>
+
+                    <div>
+                      <strong>Atomic Leave Engine</strong>
+                      <span>Casual, Sick, Privilege quotas with ACID transaction deductions on manager approval</span>
+                    </div>
+
+                    <div>
+                      <strong>Recursive Org Tree</strong>
+                      <span>Visual company hierarchy resolving dynamic manager-to-report chains</span>
+                    </div>
+
+                    <div>
+                      <strong>KYC Document Vault</strong>
+                      <span>Encrypted Aadhaar, PAN, Offer Letter & academic degree compliance repository</span>
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <aside className="project-stack">
+
+                  <p>
+                    TECHNOLOGY STACK
+                  </p>
+
+                  <div className="project-tags">
+
+                    <span>Node.js</span>
+                    <span>Express</span>
+                    <span>PostgreSQL 16</span>
+                    <span>React</span>
+                    <span>Multi-Tenancy</span>
+                    <span>JWT Auth</span>
+                    <span>ACID Transactions</span>
+                    <span>Indian Payroll (EPF/ESI)</span>
+                    <span>IoT Webhooks</span>
+                    <span>REST APIs</span>
+                    <span>Tailwind CSS</span>
+                    <span>Git</span>
+
+                  </div>
+
+                </aside>
+
+              </div>
+
+            </article>
+
+
             {/* Endpoint Reconciliation Platform */}
             <article className="project-card">
 
