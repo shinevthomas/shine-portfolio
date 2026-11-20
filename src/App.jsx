@@ -1142,6 +1142,14 @@ function App() {
                     GitHub ↗
                   </a>
 
+                  <a
+                    href="https://hrastra.vercel.app"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Live Application ↗
+                  </a>
+
                 </div>
 
               </div>
