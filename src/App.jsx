@@ -1143,7 +1143,7 @@ function App() {
                   </a>
 
                   <a
-                    href="https://hrastra.vercel.app"
+                    href="https://hrastra-demo.vercel.app"
                     target="_blank"
                     rel="noreferrer"
                   >
