@@ -1122,6 +1122,23 @@ function App() {
 
               </div>
 
+              <div className="project-images">
+
+                <div className="project-image">
+
+                  <img
+                    src="/screenshots/aegis-sec.png"
+                    alt="AegisSec Enterprise ASPM Control Center"
+                  />
+
+                  <p>
+                    Enterprise ASPM Control Center
+                  </p>
+
+                </div>
+
+              </div>
+
             </article>
 
 
@@ -1271,6 +1288,23 @@ function App() {
                   </div>
 
                 </aside>
+
+              </div>
+
+              <div className="project-images">
+
+                <div className="project-image">
+
+                  <img
+                    src="/screenshots/hrastra.png"
+                    alt="HRAstra Enterprise Cloud HRMS & Payroll"
+                  />
+
+                  <p>
+                    HRAstra Cloud HRMS & Payroll
+                  </p>
+
+                </div>
 
               </div>
 
@@ -1444,6 +1478,23 @@ function App() {
                   </div>
 
                 </aside>
+
+              </div>
+
+              <div className="project-images">
+
+                <div className="project-image">
+
+                  <img
+                    src="/screenshots/boombangh.png"
+                    alt="BoomBaangh Brand & Product Showcase"
+                  />
+
+                  <p>
+                    BoomBaangh Brand & Product Showcase
+                  </p>
+
+                </div>
 
               </div>
 
