@@ -1020,6 +1020,14 @@ function App() {
                     GitHub ↗
                   </a>
 
+                  <a
+                    href="https://aegis-sec.onrender.com"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Live Demo ↗
+                  </a>
+
                 </div>
 
               </div>
