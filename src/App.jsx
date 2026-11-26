@@ -1284,7 +1284,7 @@ function App() {
 
                 <div>
                   <p className="project-label">
-                    IT OPERATIONS & ENDPOINT SECURITY
+                    IT OPERATIONS & ENDPOINT SECURITY · ATI ROBOTICS
                   </p>
 
                   <h3>
@@ -1299,7 +1299,7 @@ function App() {
                 <div className="project-description">
 
                   <h4>
-                    A web-based platform designed to compare IT asset
+                    An internal enterprise platform built for ATI Robotics to reconcile IT asset
                     inventory with endpoint security records.
                   </h4>
 
@@ -1366,6 +1366,81 @@ function App() {
                     <span>Snipe-IT</span>
                     <span>Wazuh</span>
                     <span>Trend Micro Vision One</span>
+                  </div>
+
+                </aside>
+
+              </div>
+
+            </article>
+
+
+            {/* BoomBaangh Website */}
+            <article className="project-card">
+
+              <div className="project-header">
+
+                <div>
+                  <p className="project-label">
+                    FRONTEND · WEB DESIGN · SEO
+                  </p>
+
+                  <h3>
+                    BoomBaangh Website
+                  </h3>
+                </div>
+
+                <div className="project-links">
+
+                  <a
+                    href="https://github.com/shinevthomas/boombangh-website"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub ↗
+                  </a>
+
+                  <a
+                    href="https://boombangh-website.vercel.app"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Live Site ↗
+                  </a>
+
+                </div>
+
+              </div>
+
+              <div className="project-main">
+
+                <div className="project-description">
+
+                  <h4>
+                    A responsive brand and product showcase web application built with React and Vite,
+                    featuring structured SEO metadata, Open Graph integration, and automated Vercel deployment.
+                  </h4>
+
+                  <p>
+                    Engineered with clean component architecture, fast Vite bundling, schema.org JSON-LD
+                    structured data, sitemap, and robots.txt for search engine indexing.
+                  </p>
+
+                </div>
+
+                <aside className="project-stack">
+
+                  <p>
+                    TECHNOLOGY STACK
+                  </p>
+
+                  <div className="project-tags">
+                    <span>React</span>
+                    <span>Vite</span>
+                    <span>JavaScript</span>
+                    <span>HTML5 / CSS3</span>
+                    <span>SEO / JSON-LD</span>
+                    <span>Vercel</span>
                   </div>
 
                 </aside>
