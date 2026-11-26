@@ -2817,8 +2817,67 @@ a:focus-visible {
 }
 
 .portfolio.theme-dark .navbar {
-  background: rgba(7, 11, 20, 0.88);
+  background: rgba(7, 11, 20, 0.9);
   border-bottom-color: var(--border);
+}
+
+.portfolio.theme-dark .nav-links a,
+.portfolio.theme-dark .logo {
+  color: var(--text);
+}
+
+.portfolio.theme-dark .nav-button {
+  background: var(--accent);
+  color: #070b14;
+}
+
+.portfolio.theme-dark .hero {
+  background:
+    radial-gradient(
+      circle at 85% 18%,
+      rgba(56, 189, 248, 0.14),
+      transparent 34%
+    ),
+    linear-gradient(180deg, #070b14 0%, #0b1120 100%);
+  border-bottom-color: var(--border);
+}
+
+.portfolio.theme-dark .primary-button {
+  background: var(--accent);
+  color: #070b14;
+  border-color: var(--accent);
+}
+
+.portfolio.theme-dark .secondary-button,
+.portfolio.theme-dark .hero-tech span {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
+.portfolio.theme-dark .secondary-button:hover {
+  background: #1e293b;
+  border-color: var(--accent);
+}
+
+.portfolio.theme-dark .section,
+.portfolio.theme-dark .about-section,
+.portfolio.theme-dark .skills-section,
+.portfolio.theme-dark .experience-section,
+.portfolio.theme-dark .projects-section,
+.portfolio.theme-dark .education-section,
+.portfolio.theme-dark .certifications-section,
+.portfolio.theme-dark .contact-section {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.portfolio.theme-dark .skills-section,
+.portfolio.theme-dark .projects-section,
+.portfolio.theme-dark .certifications-section,
+.portfolio.theme-dark .footer {
+  background: #0b1120;
+  border-color: var(--border);
 }
 
 .portfolio.theme-dark .hero-card,
@@ -2828,9 +2887,34 @@ a:focus-visible {
 .portfolio.theme-dark .education-card,
 .portfolio.theme-dark .certification-card,
 .portfolio.theme-dark .contact-item,
-.portfolio.theme-dark .about-card {
+.portfolio.theme-dark .about-card,
+.portfolio.theme-dark .filter-tab {
   background: #0f172a;
   border-color: #1e293b;
+  color: var(--text);
+}
+
+.portfolio.theme-dark .filter-tab.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #070b14;
+}
+
+.portfolio.theme-dark .project-tags span,
+.portfolio.theme-dark .experience-tags span,
+.portfolio.theme-dark .project-links a,
+.portfolio.theme-dark .copy-email-btn,
+.portfolio.theme-dark .back-to-top {
+  background: #131c31;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
+.portfolio.theme-dark .project-links a:hover,
+.portfolio.theme-dark .copy-email-btn:hover,
+.portfolio.theme-dark .back-to-top:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .portfolio.theme-dark .project-image {
