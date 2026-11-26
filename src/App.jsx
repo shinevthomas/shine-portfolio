@@ -1,14 +1,69 @@
+import { useState, useEffect } from "react";
 import "./App.css";
 
 import {
   FaLinkedinIn,
   FaGithub,
   FaEnvelope,
+  FaMoon,
+  FaSun,
+  FaCopy,
+  FaCheck,
+  FaArrowUp,
+  FaTimes,
 } from "react-icons/fa";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(() => {
+    try {
+      return localStorage.getItem("portfolio-theme") === "dark";
+    } catch {
+      return false;
+    }
+  });
+  const [projectFilter, setProjectFilter] = useState("all");
+  const [lightbox, setLightbox] = useState(null);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("portfolio-theme", darkMode ? "dark" : "light");
+    } catch {
+      // ignore storage errors
+    }
+  }, [darkMode]);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const doc = document.documentElement;
+      const total = doc.scrollHeight - doc.clientHeight;
+      setScrollProgress(total > 0 ? Math.min(100, (window.scrollY / total) * 100) : 0);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setLightbox(null);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard?.writeText("shineofficial79@gmail.com");
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2200);
+  };
+
+  const showCategory = (cat) => projectFilter === "all" || projectFilter === cat;
+
   return (
-    <div className="portfolio">
+    <div className={`portfolio ${darkMode ? "theme-dark" : ""}`}>
+      <div className="scroll-progress-bar" style={{ width: `${scrollProgress}%` }} />
 
       {/* =========================================================
           NAVBAR
@@ -47,27 +102,28 @@ function App() {
 
           </div>
 
-          {/* Desktop CTA */}
-          <a href="#contact" className="nav-button">
-            Let's Connect
-          </a>
+          <div className="nav-right-actions">
+            <button
+              type="button"
+              className="theme-toggle-btn"
+              onClick={() => setDarkMode((prev) => !prev)}
+              aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+              title={darkMode ? "Light mode" : "Dark mode"}
+            >
+              {darkMode ? <FaSun /> : <FaMoon />}
+            </button>
+
+            <a href="#contact" className="nav-button">
+              Let's Connect
+            </a>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
             className="mobile-menu-button"
-            onClick={(event) => {
-              const menu = document.querySelector(".mobile-menu");
-
-              const isOpen =
-                menu?.classList.toggle("mobile-menu-open");
-
-              event.currentTarget.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-              );
-            }}
+            onClick={() => setMobileOpen((prev) => !prev)}
             aria-label="Toggle navigation menu"
-            aria-expanded="false"
+            aria-expanded={mobileOpen ? "true" : "false"}
             type="button"
           >
             <span></span>
@@ -76,29 +132,30 @@ function App() {
           </button>
 
           {/* Mobile Navigation */}
-          <div className="mobile-menu">
+          <div className={`mobile-menu ${mobileOpen ? "mobile-menu-open" : ""}`}>
 
-            <a href="#about">About</a>
+            <a href="#about" onClick={() => setMobileOpen(false)}>About</a>
 
-            <a href="#skills">Skills</a>
+            <a href="#skills" onClick={() => setMobileOpen(false)}>Skills</a>
 
-            <a href="#experience">Experience</a>
+            <a href="#experience" onClick={() => setMobileOpen(false)}>Experience</a>
 
-            <a href="#projects">Projects</a>
+            <a href="#projects" onClick={() => setMobileOpen(false)}>Projects</a>
 
-            <a href="#education">Education</a>
+            <a href="#education" onClick={() => setMobileOpen(false)}>Education</a>
 
-            <a href="#certifications">Certifications</a>
+            <a href="#certifications" onClick={() => setMobileOpen(false)}>Certifications</a>
 
             <a
               href="/Shine-V-Thomas-Resume.pdf"
               target="_blank"
               rel="noreferrer"
+              onClick={() => setMobileOpen(false)}
             >
               Resume ↗
             </a>
 
-            <a href="#contact">Contact</a>
+            <a href="#contact" onClick={() => setMobileOpen(false)}>Contact</a>
 
           </div>
 
@@ -118,7 +175,7 @@ function App() {
             <div className="hero-content">
 
               <p className="hero-label">
-                IT PROFESSIONAL • INFRASTRUCTURE • TECHNOLOGY
+                FULL-STACK ENGINEER • CYBERSECURITY & DEVSECOPS • SAAS ARCHITECT
               </p>
 
               <h1>
@@ -126,14 +183,14 @@ function App() {
               </h1>
 
               <h2>
-                Building, securing & supporting
-                <span> modern technology systems.</span>
+                Architecting secure SaaS platforms
+                <span> & enterprise security systems.</span>
               </h2>
 
               <p className="hero-description">
-                IT professional with hands-on experience across system
-                administration, networking, cloud infrastructure,
-                cybersecurity, and full-stack software development.
+                Full-Stack Software Engineer & Cybersecurity Specialist (MCA in Cybersecurity & AI)
+                building multi-tenant SaaS platforms, Application Security Posture Management (ASPM),
+                and multi-vendor endpoint reconciliation pipelines.
               </p>
 
               <div className="hero-actions">
@@ -262,6 +319,31 @@ function App() {
 
           </div>
 
+        </section>
+
+
+        {/* =========================================================
+            IMPACT METRICS STRIP
+        ========================================================= */}
+        <section className="impact-strip" aria-label="Key Engineering Highlights">
+          <div className="impact-container">
+            <div className="impact-item">
+              <strong>5+</strong>
+              <span>Production Systems Built & Deployed</span>
+            </div>
+            <div className="impact-item">
+              <strong>18 Schemas</strong>
+              <span>Multi-Tenant PostgreSQL SaaS Architecture</span>
+            </div>
+            <div className="impact-item">
+              <strong>SARIF 2.1.0</strong>
+              <span>Automated ASPM & CI/CD Security Gates</span>
+            </div>
+            <div className="impact-item">
+              <strong>80%+</strong>
+              <span>Audit Overhead Reduced at ATI Robotics</span>
+            </div>
+          </div>
         </section>
 
 
@@ -761,13 +843,44 @@ function App() {
               <span>04</span>
 
               <h2>
-                Featured Project
+                Featured Projects
               </h2>
 
             </div>
 
+            <div className="project-filters" role="tablist" aria-label="Filter projects by category">
+              <button
+                type="button"
+                className={`filter-tab ${projectFilter === "all" ? "active" : ""}`}
+                onClick={() => setProjectFilter("all")}
+              >
+                All Projects (5)
+              </button>
+              <button
+                type="button"
+                className={`filter-tab ${projectFilter === "security" ? "active" : ""}`}
+                onClick={() => setProjectFilter("security")}
+              >
+                Security & DevSecOps (2)
+              </button>
+              <button
+                type="button"
+                className={`filter-tab ${projectFilter === "saas" ? "active" : ""}`}
+                onClick={() => setProjectFilter("saas")}
+              >
+                Enterprise SaaS (2)
+              </button>
+              <button
+                type="button"
+                className={`filter-tab ${projectFilter === "web" ? "active" : ""}`}
+                onClick={() => setProjectFilter("web")}
+              >
+                Frontend & SEO (1)
+              </button>
+            </div>
 
-            <article className="project-card">
+
+            <article className={`project-card ${showCategory("saas") ? "" : "project-card-hidden"}`}>
 
               <div className="project-header">
 
@@ -962,7 +1075,10 @@ function App() {
 
               <div className="project-images">
 
-                <div className="project-image">
+                <div
+                  className="project-image project-image-clickable"
+                  onClick={() => setLightbox({ src: "/screenshots/dashboard.png", caption: "SmartBiz ERP — ERP Dashboard" })}
+                >
 
                   <img
                     src="/screenshots/dashboard.png"
@@ -976,7 +1092,10 @@ function App() {
                 </div>
 
 
-                <div className="project-image">
+                <div
+                  className="project-image project-image-clickable"
+                  onClick={() => setLightbox({ src: "/screenshots/inventory.png", caption: "SmartBiz ERP — Inventory Management" })}
+                >
 
                   <img
                     src="/screenshots/inventory.png"
@@ -995,7 +1114,7 @@ function App() {
 
 
             {/* AegisSec — Enterprise ASPM Platform */}
-            <article className="project-card">
+            <article className={`project-card ${showCategory("security") ? "" : "project-card-hidden"}`}>
 
               <div className="project-header">
 
@@ -1124,7 +1243,10 @@ function App() {
 
               <div className="project-images">
 
-                <div className="project-image">
+                <div
+                  className="project-image project-image-clickable"
+                  onClick={() => setLightbox({ src: "/screenshots/aegis-sec.png", caption: "AegisSec — Enterprise ASPM Control Center" })}
+                >
 
                   <img
                     src="/screenshots/aegis-sec.png"
@@ -1143,7 +1265,7 @@ function App() {
 
 
             {/* HRAstra — Enterprise Cloud HRMS & Payroll */}
-            <article className="project-card">
+            <article className={`project-card ${showCategory("saas") ? "" : "project-card-hidden"}`}>
 
               <div className="project-header">
 
@@ -1293,7 +1415,10 @@ function App() {
 
               <div className="project-images">
 
-                <div className="project-image">
+                <div
+                  className="project-image project-image-clickable"
+                  onClick={() => setLightbox({ src: "/screenshots/hrastra.png", caption: "HRAstra — Cloud HRMS & Payroll" })}
+                >
 
                   <img
                     src="/screenshots/hrastra.png"
@@ -1312,7 +1437,7 @@ function App() {
 
 
             {/* Endpoint Reconciliation Platform */}
-            <article className="project-card">
+            <article className={`project-card ${showCategory("security") ? "" : "project-card-hidden"}`}>
 
               <div className="project-header">
 
@@ -1410,7 +1535,7 @@ function App() {
 
 
             {/* BoomBaangh Website */}
-            <article className="project-card">
+            <article className={`project-card ${showCategory("web") ? "" : "project-card-hidden"}`}>
 
               <div className="project-header">
 
@@ -1483,7 +1608,10 @@ function App() {
 
               <div className="project-images">
 
-                <div className="project-image">
+                <div
+                  className="project-image project-image-clickable"
+                  onClick={() => setLightbox({ src: "/screenshots/boombangh.png", caption: "BoomBaangh — Brand & Product Showcase" })}
+                >
 
                   <img
                     src="/screenshots/boombangh.png"
@@ -1795,20 +1923,28 @@ function App() {
               <div className="contact-details">
 
                 {/* Email */}
-                <a
-                  href="mailto:shineofficial79@gmail.com"
-                  className="contact-item"
-                >
+                <div className="contact-item contact-item-row">
+                  <a
+                    href="mailto:shineofficial79@gmail.com"
+                    className="contact-item-link"
+                  >
+                    <span className="contact-item-label">
+                      EMAIL
+                    </span>
 
-                  <span className="contact-item-label">
-                    EMAIL
-                  </span>
-
-                  <span className="contact-item-value">
-                    shineofficial79@gmail.com
-                  </span>
-
-                </a>
+                    <span className="contact-item-value">
+                      shineofficial79@gmail.com
+                    </span>
+                  </a>
+                  <button
+                    type="button"
+                    className="copy-email-btn"
+                    onClick={handleCopyEmail}
+                    aria-label="Copy email address"
+                  >
+                    {copiedEmail ? <><FaCheck /> Copied</> : <><FaCopy /> Copy</>}
+                  </button>
+                </div>
 
 
                 {/* LinkedIn */}
@@ -1899,14 +2035,42 @@ function App() {
           </div>
 
 
-          <p>
-            © {new Date().getFullYear()} Shine V Thomas.
-            All rights reserved.
-          </p>
+          <div className="footer-right">
+            <p>
+              © {new Date().getFullYear()} Shine V Thomas.
+              All rights reserved.
+            </p>
+            <a href="#home" className="back-to-top" aria-label="Back to top">
+              <FaArrowUp /> Top
+            </a>
+          </div>
 
         </div>
 
       </footer>
+
+      {lightbox && (
+        <div
+          className="lightbox-backdrop"
+          onClick={() => setLightbox(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={lightbox.caption}
+        >
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="lightbox-close"
+              onClick={() => setLightbox(null)}
+              aria-label="Close preview"
+            >
+              <FaTimes />
+            </button>
+            <img src={lightbox.src} alt={lightbox.caption} />
+            <p className="lightbox-caption">{lightbox.caption}</p>
+          </div>
+        </div>
+      )}
 
     </div>
   );
