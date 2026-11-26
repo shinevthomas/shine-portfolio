@@ -1861,10 +1861,6 @@ function App() {
                     and machine learning concepts and applications.
                   </p>
 
-                  <span className="certification-status">
-                    CERTIFICATE PENDING
-                  </span>
-
                 </div>
 
               </article>
